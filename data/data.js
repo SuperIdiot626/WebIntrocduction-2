@@ -28,14 +28,14 @@ const websiteData = {
       "zh": "🌐 English",
       "en": "🌐 中文"
     },
-    "backHome": { 
-      "zh": "⬅ 返回首页", 
-      "en": "⬅ Back to Home" 
-    }, // 新增：返回按钮
-    "allPubs": { 
-      "zh": "所有学术成果", 
-      "en": "All Publications" 
-    } // 新增：独立页面标题
+    "backHome": {
+      "zh": "⬅ 返回首页",
+      "en": "⬅ Back to Home"
+    },
+    "allPubs": {
+      "zh": "所有学术成果",
+      "en": "All Publications"
+    }
   },
   "hero": {
     "title": {
@@ -51,7 +51,7 @@ const websiteData = {
       "en": "Collaborate With Us"
     }
   },
-  
+
   "sections": {
     "architecture": {
       "zh": "系统核心与研究领域",
@@ -69,16 +69,16 @@ const websiteData = {
       "zh": "联系我们",
       "en": "Contact Us"
     },
-    "pubs": { "zh": "学术成果与技术白皮书", "en": "Publications & Whitepapers" },
-    "contact": { "zh": "联系我们", "en": "Contact Us" },
-    "morePubsBtn": { "zh": "查看更多成果 ➔", "en": "View All Publications ➔" } // 新增：查看更多按钮
+    "morePubsBtn": {
+      "zh": "查看更多成果 ➔",
+      "en": "View All Publications ➔"
+    }
   },
-
 
   // 研究领域配置
   "config": {
-    "researchCardsPerRow": 3,  // 你可以在这里改成 2, 3, 4... 来控制每行最多显示几个研究领域
-    "maxHomePubs": 5  // 新增：首页最多显示的学术成果数量
+    "researchCardsPerRow": 3,
+    "maxHomePubs": 5
   },
   "researchData": [
     {
@@ -150,13 +150,21 @@ const websiteData = {
       "members": [
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "陈博士 (Ph.D.)", "en": "Dr. Chen (Ph.D.)" },
-          "role": { "zh": "首席架构师 / PI", "en": "Chief Architect / PI" },
-          "desc": { "zh": "主导四大模型互联的宏观系统架构设计，统筹全链路智能化工程的闭环演进。", "en": "Leads the macro system architecture design of four interconnected models." }
+          "name": {
+            "zh": "陈博士 (Ph.D.)",
+            "en": "Dr. Chen (Ph.D.)"
+          },
+          "role": {
+            "zh": "首席架构师 / PI",
+            "en": "Chief Architect / PI"
+          },
+          "desc": {
+            "zh": "主导四大模型互联的宏观系统架构设计，统筹全链路智能化工程的闭环演进。",
+            "en": "Leads the macro system architecture design of four interconnected models."
+          }
         }
       ]
     },
-
 
     // 教职工
     {
@@ -168,38 +176,83 @@ const websiteData = {
       "members": [
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "王博士", "en": "Dr. Wang" },
-          "role": { "zh": "大模型架构研究员", "en": "LLM Architecture Researcher" },
-          "desc": { "zh": "主攻 MoE 混合专家模型设计与 RLVR 对齐，负责前置“方案设计模型”的核心优化。", "en": "Focuses on MoE hybrid expert model design and RLVR alignment." }
+          "name": {
+            "zh": "王博士",
+            "en": "Dr. Wang"
+          },
+          "role": {
+            "zh": "大模型架构研究员",
+            "en": "LLM Architecture Researcher"
+          },
+          "desc": {
+            "zh": "主攻 MoE 混合专家模型设计与 RLVR 对齐，负责前置“方案设计模型”的核心优化。",
+            "en": "Focuses on MoE hybrid expert model design and RLVR alignment."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "李工", "en": "Engineer Li" },
-          "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
-          "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
+          "name": {
+            "zh": "李工",
+            "en": "Engineer Li"
+          },
+          "role": {
+            "zh": "语义解析总监",
+            "en": "Semantic Parsing Director"
+          },
+          "desc": {
+            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
+            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "李工", "en": "Engineer Li" },
-          "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
-          "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
+          "name": {
+            "zh": "李工",
+            "en": "Engineer Li"
+          },
+          "role": {
+            "zh": "语义解析总监",
+            "en": "Semantic Parsing Director"
+          },
+          "desc": {
+            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
+            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "李工", "en": "Engineer Li" },
-          "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
-          "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
+          "name": {
+            "zh": "李工",
+            "en": "Engineer Li"
+          },
+          "role": {
+            "zh": "语义解析总监",
+            "en": "Semantic Parsing Director"
+          },
+          "desc": {
+            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
+            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "李工", "en": "Engineer Li" },
-          "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
-          "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
+          "name": {
+            "zh": "李工",
+            "en": "Engineer Li"
+          },
+          "role": {
+            "zh": "语义解析总监",
+            "en": "Semantic Parsing Director"
+          },
+          "desc": {
+            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
+            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
+          }
         }
       ]
     },
 
-    // 团队成员
+    // 学生团队
     {
       "categoryTitle": {
         "zh": "硕博研究生 (Graduate Students)",
@@ -209,33 +262,78 @@ const websiteData = {
       "members": [
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "张同学", "en": "Zhang" },
-          "role": { "zh": "博士研究生", "en": "Ph.D. Candidate" },
-          "desc": { "zh": "研究方向为虚拟沙箱仿真与多智能体强化学习验证。", "en": "Research focuses on virtual sandbox simulation and multi-agent RL validation." }
+          "name": {
+            "zh": "张同学",
+            "en": "Zhang"
+          },
+          "role": {
+            "zh": "博士研究生",
+            "en": "Ph.D. Candidate"
+          },
+          "desc": {
+            "zh": "研究方向为虚拟沙箱仿真与多智能体强化学习验证。",
+            "en": "Research focuses on virtual sandbox simulation and multi-agent RL validation."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "赵同学", "en": "Zhao" },
-          "role": { "zh": "硕士研究生", "en": "Master Student" },
-          "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
+          "name": {
+            "zh": "赵同学",
+            "en": "Zhao"
+          },
+          "role": {
+            "zh": "硕士研究生",
+            "en": "Master Student"
+          },
+          "desc": {
+            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
+            "en": "Participates in data cleaning and performance regression testing."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "赵同学", "en": "Zhao" },
-          "role": { "zh": "硕士研究生", "en": "Master Student" },
-          "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
+          "name": {
+            "zh": "赵同学",
+            "en": "Zhao"
+          },
+          "role": {
+            "zh": "硕士研究生",
+            "en": "Master Student"
+          },
+          "desc": {
+            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
+            "en": "Participates in data cleaning and performance regression testing."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "赵同学", "en": "Zhao" },
-          "role": { "zh": "硕士研究生", "en": "Master Student" },
-          "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
+          "name": {
+            "zh": "赵同学",
+            "en": "Zhao"
+          },
+          "role": {
+            "zh": "硕士研究生",
+            "en": "Master Student"
+          },
+          "desc": {
+            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
+            "en": "Participates in data cleaning and performance regression testing."
+          }
         },
         {
           "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
-          "name": { "zh": "赵同学", "en": "Zhao" },
-          "role": { "zh": "硕士研究生", "en": "Master Student" },
-          "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
+          "name": {
+            "zh": "赵同学",
+            "en": "Zhao"
+          },
+          "role": {
+            "zh": "硕士研究生",
+            "en": "Master Student"
+          },
+          "desc": {
+            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
+            "en": "Participates in data cleaning and performance regression testing."
+          }
         }
       ]
     }
