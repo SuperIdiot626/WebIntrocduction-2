@@ -141,11 +141,10 @@
             window.addEventListener('resize', setNavHeight);
             setNavHeight();
 
-            // 检查外部文件 data.js 是否成功加载并注入了 websiteData 变量
             if (typeof websiteData !== 'undefined') {
                 renderPage();
             } else {
-                document.getElementById('team-container').innerHTML = `<p style="color: red;">无法读取数据文件。请确保您已将 data.json 重命名为 data.js 并保留了相应的代码格式。</p>`;
+                document.getElementById('team-container').innerHTML = `<p style="color: red;">无法读取数据文件。</p>`;
                 return;
             }
             
@@ -158,43 +157,45 @@
         });
 
         function renderPage() {
-            const langData = websiteData[currentLang];
-
-            // 1. 替换静态文本
+            // 1. 替换静态文本 (核心改动：寻址到末端节点后再提取当前语言)
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const keys = el.getAttribute('data-i18n').split('.');
-                let value = langData;
-                keys.forEach(k => { value = value[k] ? value[k] : value });
-                el.innerHTML = value; 
+                let node = websiteData;
+                keys.forEach(k => { node = node[k] ? node[k] : node });
+                
+                // 确保节点存在，并取出对应语言的值
+                if (node && node[currentLang]) {
+                    el.innerHTML = node[currentLang];
+                }
             });
 
-            // 2. 渲染研究领域
-            document.getElementById('research-container').innerHTML = langData.researchData.map((item, index) => `
+            // 2. 渲染研究领域 (核心改动：为每个属性加上 [currentLang])
+            document.getElementById('research-container').innerHTML = websiteData.researchData.map((item, index) => `
                 <div class="card fade-in-up" style="--i: ${index + 1}">
                     <span class="card-icon" aria-hidden="true">${item.icon}</span>
-                    <h3>${item.title}</h3>
-                    <p>${item.desc}</p>
+                    <h3>${item.title[currentLang]}</h3>
+                    <p>${item.desc[currentLang]}</p>
                 </div>
             `).join('');
 
             // 3. 渲染核心团队
-            document.getElementById('team-container').innerHTML = langData.teamData.map((member, index) => `
+            document.getElementById('team-container').innerHTML = websiteData.teamData.map((member, index) => `
                 <div class="team-card fade-in-up" style="--i: ${index + 1}">
-                    <div class="avatar">${member.avatar}</div>
-                    <h4>${member.name}</h4>
-                    <div class="role">${member.role}</div>
-                    <p>${member.desc}</p>
+                    <div class="avatar">${member.avatar[currentLang]}</div>
+                    <h4>${member.name[currentLang]}</h4>
+                    <div class="role">${member.role[currentLang]}</div>
+                    <p>${member.desc[currentLang]}</p>
                 </div>
             `).join('');
 
             // 4. 渲染学术成果
-            document.getElementById('pub-container').innerHTML = langData.pubData.map((pub, index) => `
+            document.getElementById('pub-container').innerHTML = websiteData.pubData.map((pub, index) => `
                 <div class="pub-item fade-in-up" style="--i: ${index + 1}">
                     <div class="pub-year">${pub.year}</div>
                     <div class="pub-content">
-                        <h3>${pub.title}</h3>
-                        <p class="pub-authors">${pub.authors}</p>
-                        <p class="pub-journal">${pub.journal}</p>
+                        <h3>${pub.title[currentLang]}</h3>
+                        <p class="pub-authors">${pub.authors[currentLang]}</p>
+                        <p class="pub-journal">${pub.journal[currentLang]}</p>
                         <div class="pub-links">
                             <a href="#" class="pub-link-btn" download>📄 PDF (${pub.pdfSize})</a>
                             ${pub.hasDoi ? '<a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">🔗 DOI</a>' : ''}
