@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>系统架构研发团队</title>
     <style>
+        /* ============================ */
+        /* 1. 全局变量与基础设置 */
+        /* ============================ */
         :root {
             --primary-color: #00468b;
             --bg-body: #f8fafc;
@@ -15,204 +18,90 @@
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --nav-height: 70px;
-            
             --anim-duration: 1.2s; 
             --anim-stagger: 0.15s; 
             --anim-ease: cubic-bezier(0.22, 1, 0.36, 1); 
         }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: var(--nav-height); 
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-        }
-
+        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
+        /* ============================ */
+        /* 2. 核心动画系统 */
+        /* ============================ */
         .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 
-                opacity var(--anim-duration) var(--anim-ease) calc(var(--anim-stagger) * var(--i, 0)), 
-                transform var(--anim-duration) var(--anim-ease) calc(var(--anim-stagger) * var(--i, 0));
+            opacity: 0; transform: translateY(30px);
+            transition: opacity var(--anim-duration) var(--anim-ease) calc(var(--anim-stagger) * var(--i, 0)), 
+                        transform var(--anim-duration) var(--anim-ease) calc(var(--anim-stagger) * var(--i, 0));
         }
+        .fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
 
-        .fade-in-up.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 导航栏 */
-        nav {
-            background-color: var(--bg-surface);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        /* ============================ */
+        /* 3. 页面布局与组件样式 */
+        /* ============================ */
+        nav { background-color: var(--bg-surface); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center; }
         .nav-brand { font-size: 1.25rem; font-weight: 600; color: var(--primary-color); }
         .nav-links { display: flex; gap: 2rem; }
         .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; transition: color 0.2s; }
         .nav-links a:hover { color: var(--primary-color); }
-
-        /* Hero 区域 */
-        .hero {
-            background-color: var(--bg-surface);
-            padding: 6rem 5%;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); }
-        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 2.5rem auto; }
-        .btn-primary {
-            display: inline-block; background-color: var(--primary-color); color: #ffffff;
-            padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;
-            transition: background-color 0.2s;
-        }
+        .btn-primary { display: inline-block; background-color: var(--primary-color); color: #ffffff; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.2s; border: none; cursor: pointer; font-size: 1rem; }
         .btn-primary:hover { background-color: #003366; }
-
-        /* 通用区块 */
         section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title {
-            font-size: 2rem; font-weight: 600; margin-bottom: 3rem; text-align: left;
-            color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;
-        }
+        .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 3rem; text-align: left; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
 
-        /* 网格 */
-        .grid, .team-grid { display: grid; gap: 2rem; }
-        .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-        .team-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-
-        .card, .team-card {
-            background-color: var(--bg-surface); border: 1px solid var(--border-color);
-            border-radius: 8px; box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
-        }
+        /* 网格卡片 */
+        .grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .team-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        .card, .team-card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; }
         .card { padding: 2.5rem; }
         .team-card { padding: 2.5rem 2rem; text-align: center; }
         .card:hover, .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-
         .card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
         .card h3, .team-card h4 { color: var(--text-main); margin-bottom: 1rem; }
         .card p, .team-card p { color: var(--text-secondary); font-size: 0.95rem; }
-
-        .avatar {
-            width: 96px; height: 96px; background-color: var(--border-color); border-radius: 50%;
-            margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center;
-            font-size: 2rem; font-weight: bold; color: var(--text-secondary);
-        }
+        .avatar { width: 96px; height: 96px; background-color: var(--border-color); border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: var(--text-secondary); }
         .team-card .role { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; }
 
-        /* ============================ */
-        /* 新增：学术成果 (Publications) */
-        /* ============================ */
-        .pub-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
+        /* 学术成果列表 */
+        .pub-list { display: flex; flex-direction: column; gap: 2.5rem; }
+        .pub-item { display: flex; gap: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2.5rem; }
+        .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .pub-year { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); min-width: 80px; padding-top: 0.25rem; }
+        .pub-content { flex: 1; }
+        .pub-content h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.4; }
+        .pub-authors { color: var(--text-main); font-weight: 500; margin-bottom: 0.25rem; font-size: 0.95rem; }
+        .pub-journal { color: var(--text-secondary); font-style: italic; margin-bottom: 1.25rem; font-size: 0.9rem; }
+        .pub-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .pub-link-btn { text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 0.85rem; border: 1px solid var(--primary-color); padding: 0.35rem 1rem; border-radius: 4px; transition: all 0.2s; }
+        .pub-link-btn:hover { background-color: var(--primary-color); color: #ffffff; }
 
-        .pub-item {
-            display: flex;
-            gap: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2.5rem;
-        }
-
-        .pub-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .pub-year {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            min-width: 80px;
-            padding-top: 0.25rem;
-        }
-
-        .pub-content {
-            flex: 1;
-        }
-
-        .pub-content h3 {
-            font-size: 1.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-        }
-
-        .pub-authors {
-            color: var(--text-main);
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            font-size: 0.95rem;
-        }
-
-        .pub-journal {
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 1.25rem;
-            font-size: 0.9rem;
-        }
-
-        .pub-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .pub-link-btn {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 0.85rem;
-            border: 1px solid var(--primary-color);
-            padding: 0.35rem 1rem;
-            border-radius: 4px;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .pub-link-btn:hover {
-            background-color: var(--primary-color);
-            color: #ffffff;
-        }
-
-        /* 移动端响应式调整 */
-        @media (max-width: 768px) {
-            .nav-links { display: none; /* 移动端暂且隐藏导航 */ }
-            .pub-item { flex-direction: column; gap: 0.5rem; }
-            .pub-year { font-size: 1.2rem; padding-top: 0; }
-        }
-
-        footer {
-            background-color: var(--bg-surface); border-top: 1px solid var(--border-color);
-            padding: 4rem 5%; text-align: center; color: var(--text-secondary); margin-top: 3rem;
-        }
+        /* 联系表单 */
+        .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; background-color: var(--bg-surface); padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+        .contact-info h3, .contact-form h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-main); }
+        .contact-info p.desc { color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
+        .info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+        .info-icon { font-size: 1.5rem; }
+        .info-text strong { display: block; color: var(--text-main); margin-bottom: 0.25rem; }
+        .info-text p { color: var(--text-secondary); margin: 0; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-main); font-weight: 500; font-size: 0.95rem; }
+        .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 6px; font-family: inherit; font-size: 1rem; color: var(--text-main); background-color: var(--bg-body); transition: border-color 0.2s, box-shadow 0.2s; }
+        .form-control:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0, 70, 139, 0.1); }
+        textarea.form-control { resize: vertical; min-height: 120px; }
+        
+        /* 其他 */
+        .hero { background-color: var(--bg-surface); padding: 6rem 5%; text-align: center; border-bottom: 1px solid var(--border-color); }
+        .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); }
+        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 2.5rem auto; }
+        footer { background-color: var(--bg-surface); border-top: 1px solid var(--border-color); padding: 3rem 5%; text-align: center; color: var(--text-secondary); }
+        @media (max-width: 768px) { .nav-links { display: none; } .pub-item { flex-direction: column; gap: 0.5rem; } .pub-year { font-size: 1.2rem; padding-top: 0; } .contact-container { grid-template-columns: 1fr; gap: 3rem; padding: 2rem; } }
     </style>
 </head>
 <body>
 
     <nav id="navbar">
-        <div class="nav-brand">架构研发组</div>
+        <div class="nav-brand">多模型协作系统研究组</div>
         <div class="nav-links">
             <a href="#home">首页</a>
             <a href="#architecture">研究领域</a>
@@ -224,125 +113,165 @@
 
     <header class="hero" id="home">
         <h1 class="fade-in-up" style="--i: 0">全链路智能核心架构团队</h1>
-        <p class="fade-in-up" style="--i: 1">我们专注于前沿系统架构研究，致力于构建从需求解析到落地验证的自动化工程闭环。我们与工业界密切合作，解决现实世界中的复杂挑战。</p>
+        <p class="fade-in-up" style="--i: 1">我们专注于前沿大型AI系统架构研究，致力于构建从需求解析、方案设计、详细蓝图到高并发仿真验证的四位一体自动化工程闭环。</p>
         <div class="fade-in-up" style="--i: 2">
-            <a href="#contact" class="btn-primary">获取联系</a>
+            <a href="#contact" class="btn-primary">探讨合作</a>
         </div>
     </header>
 
     <section id="architecture">
-        <h2 class="section-title fade-in-up" style="--i: 0">核心架构与研究领域</h2>
+        <h2 class="section-title fade-in-up" style="--i: 0">系统核心与研究领域</h2>
         <div class="grid">
             <div class="card fade-in-up" style="--i: 1">
                 <span class="card-icon" aria-hidden="true">🔬</span>
-                <h3>需求分析与知识图谱</h3>
-                <p>精准解析业务输入，自动提取核心关键指标与约束条件，为下游流程提供标准化、结构化的数据基座。</p>
+                <h3>需求分析模型</h3>
+                <p>精准解析复杂业务输入，自动提取核心关键指标与约束条件，为下游模型提供标准化、结构化的数据基座。</p>
             </div>
             <div class="card fade-in-up" style="--i: 2">
-                <span class="card-icon" aria-hidden="true">💻</span>
-                <h3>方案设计与精细蓝图</h3>
-                <p>将宏观评估转化为高精度工程蓝图，生成详尽的技术规格、接口定义与最佳架构路径。</p>
+                <span class="card-icon" aria-hidden="true">🧠</span>
+                <h3>方案设计与优化模型</h3>
+                <p>基于知识图谱评估可行性，输出最优系统架构路径，并在底层算力成本与性能指标之间寻求最佳平衡点。</p>
             </div>
             <div class="card fade-in-up" style="--i: 3">
+                <span class="card-icon" aria-hidden="true">📐</span>
+                <h3>详细产品设计模型</h3>
+                <p>将宏观评估转化为高精度的底层工程蓝图，生成详尽的技术规格、接口定义与组件参数组合。</p>
+            </div>
+            <div class="card fade-in-up" style="--i: 4">
                 <span class="card-icon" aria-hidden="true">⚙️</span>
-                <h3>大并发仿真与验证</h3>
-                <p>具备大批量分析处理能力，在虚拟环境中进行高并发压力测试与逻辑推演，确保落地表现的绝对稳定。</p>
+                <h3>仿真与验证模型</h3>
+                <p>具备大批量分析处理能力，在虚拟环境中进行高并发压力测试与逻辑推演，确保四大模型协同运转的绝对稳定。</p>
             </div>
         </div>
     </section>
 
     <section id="team">
         <h2 class="section-title fade-in-up" style="--i: 0">核心团队</h2>
-        <div class="team-grid">
-            <div class="team-card fade-in-up" style="--i: 1">
-                <div class="avatar">陈</div>
-                <h4>陈博士 (Ph.D.)</h4>
-                <div class="role">首席架构师 / PI</div>
-                <p>专注于大规模分布式系统与多模型协同架构设计，统筹全链路工程的闭环演进。</p>
+        <div class="team-grid" id="team-container">
             </div>
-            <div class="team-card fade-in-up" style="--i: 2">
-                <div class="avatar">王</div>
-                <h4>王博士</h4>
-                <div class="role">大模型架构研究员</div>
-                <p>主攻 MoE 混合专家模型架构设计与 RLVR 强化学习对齐，负责方案设计环节的核心大模型优化。</p>
-            </div>
-            <div class="team-card fade-in-up" style="--i: 3">
-                <div class="avatar">李</div>
-                <h4>李工</h4>
-                <div class="role">语义解析总监</div>
-                <p>深耕深度学习与结构化提取，主导系统前置“需求分析”模块的数据标准化与清洗。</p>
-            </div>
-            <div class="team-card fade-in-up" style="--i: 4">
-                <div class="avatar">刘</div>
-                <h4>刘工</h4>
-                <div class="role">仿真验证主管</div>
-                <p>专注于复杂系统建模，构建虚拟沙箱，执行大批量逻辑推演与高并发压力测试。</p>
-            </div>
-        </div>
     </section>
 
     <section id="publications">
         <h2 class="section-title fade-in-up" style="--i: 0">学术成果与技术白皮书</h2>
-        
-        <div class="pub-list">
-            
-            <div class="pub-item fade-in-up" style="--i: 1">
-                <div class="pub-year">2026</div>
-                <div class="pub-content">
-                    <h3>A Multi-Model Collaborative Framework for Automated Engineering Blueprint Generation</h3>
-                    <p class="pub-authors">Chen, W., Wang, L., Zhao, Q., et al.</p>
-                    <p class="pub-journal">IEEE Transactions on Software Engineering, 52(4), 112-135.</p>
-                    <div class="pub-links">
-                        <a href="files/paper1.pdf" class="pub-link-btn">📄 下载 PDF</a>
-                        <a href="#" class="pub-link-btn">🔗 DOI</a>
-                        <a href="#" class="pub-link-btn">💻 访问代码</a>
-                    </div>
-                </div>
+        <div class="pub-list" id="pub-container">
             </div>
+    </section>
 
-            <div class="pub-item fade-in-up" style="--i: 2">
-                <div class="pub-year">2025</div>
-                <div class="pub-content">
-                    <h3>High-Concurrency Simulation and Validation Methodologies in Virtual Sandboxes</h3>
-                    <p class="pub-authors">Liu, M., Chen, W., Zhang, H.</p>
-                    <p class="pub-journal">Proceedings of the 47th International Conference on Software Engineering (ICSE '25).</p>
-                    <div class="pub-links">
-                        <a href="files/paper2.pdf" class="pub-link-btn">📄 下载 PDF</a>
-                        <a href="#" class="pub-link-btn">🔗 DOI</a>
-                    </div>
-                </div>
+    <section id="contact">
+        <h2 class="section-title fade-in-up" style="--i: 0">联系我们</h2>
+        <div class="contact-container fade-in-up" style="--i: 1">
+            <div class="contact-info">
+                <h3>保持沟通</h3>
+                <p class="desc">我们对学术交流、工业界项目合作以及优秀人才的加入始终保持开放态度。欢迎通过以下方式与我们取得联系。</p>
+                <div class="info-item"><div class="info-icon">📍</div><div class="info-text"><strong>办公地址</strong><p>中国 · 某市某区某大道 127号<br>高新技术研发中心 B座 8楼</p></div></div>
+                <div class="info-item"><div class="info-icon">✉️</div><div class="info-text"><strong>电子邮箱</strong><p><a href="mailto:contact@example.com" style="color:var(--primary-color);text-decoration:none;">contact@example.com</a></p></div></div>
             </div>
-
-            <div class="pub-item fade-in-up" style="--i: 3">
-                <div class="pub-year">2024</div>
-                <div class="pub-content">
-                    <h3>Optimizing Heterogeneous Compute Clusters for Mixture-of-Experts (MoE) Architecture Training</h3>
-                    <p class="pub-authors">Sun, Y., Wang, L., Chen, W.</p>
-                    <p class="pub-journal">Journal of Parallel and Distributed Computing, 185, 45-60.</p>
-                    <div class="pub-links">
-                        <a href="files/paper3.pdf" class="pub-link-btn">📄 下载 PDF</a>
-                    </div>
-                </div>
+            <div class="contact-form">
+                <h3>发送消息</h3>
+                <form action="#" onsubmit="event.preventDefault(); alert('表单提交功能需要在后端配置后生效！');">
+                    <div class="form-group"><label>您的称谓 / 姓名</label><input type="text" class="form-control" required></div>
+                    <div class="form-group"><label>联系邮箱</label><input type="email" class="form-control" required></div>
+                    <div class="form-group"><label>合作意向 / 问题描述</label><textarea class="form-control" required></textarea></div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">提交信息</button>
+                </form>
             </div>
-
         </div>
     </section>
 
-    <footer id="contact" class="fade-in-up" style="--i: 0">
-        <p><strong>地址:</strong> 中国 · 研发中心 127号大楼</p>
-        <p><strong>邮箱:</strong> <a href="mailto:contact@example.com">contact@example.com</a></p>
-        <p>&copy; 2026 核心架构工程团队</p>
-    </footer>
+    <footer><p>&copy; 2026 核心架构工程团队. 保留所有权利.</p></footer>
 
     <script>
+        const websiteData = {
+            // 团队成员数据配置 (注意格式要求：属性名无需引号，值用引号包裹，对象之间用逗号隔开)
+            "teamMembers": [
+                {
+                    avatar: "陈",
+                    name: "陈博士 (Ph.D.)",
+                    role: "首席架构师 / PI",
+                    desc: "主导四大模型互联的宏观系统架构设计，统筹全链路智能化工程的闭环演进。"
+                },
+                {
+                    avatar: "王",
+                    name: "王博士",
+                    role: "大模型架构研究员",
+                    desc: "主攻 MoE 混合专家模型设计与 RLVR 对齐，负责前置“方案设计模型”的核心优化。"
+                },
+                {
+                    avatar: "李",
+                    name: "李工",
+                    role: "语义解析总监",
+                    desc: "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。"
+                },
+                {
+                    avatar: "孙",
+                    name: "孙工",
+                    role: "底层算力调优工程师",
+                    desc: "专攻异构计算集群的底层性能调优，解决高负载环境下的帧率延迟与温控瓶颈。"
+                }
+            ],
+
+            // 学术成果数据配置
+            "publications": [
+                {
+                    year: "2026",
+                    title: "A Four-Stage Multi-Model Collaborative Framework for Automated System Architecture",
+                    authors: "Chen, W., Wang, L., Zhao, Q., et al.",
+                    journal: "IEEE Transactions on Software Engineering, 52(4), 112-135.",
+                    pdfSize: "2.4 MB",
+                    hasDoi: true // 控制是否显示 DOI 按钮
+                },
+                {
+                    year: "2025",
+                    title: "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+                    authors: "Liu, M., Chen, W., Zhang, H.",
+                    journal: "Proceedings of the 47th International Conference on Software Engineering (ICSE '25).",
+                    pdfSize: "1.8 MB",
+                    hasDoi: false
+                }
+            ]
+        };
+
+        // =========================================================
+        // 核心渲染逻辑 (请勿轻易修改以下代码)
+        // =========================================================
         document.addEventListener("DOMContentLoaded", () => {
+            // 1. 渲染团队成员
+            const teamContainer = document.getElementById('team-container');
+            const teamHTML = websiteData.teamMembers.map((member, index) => `
+                <div class="team-card fade-in-up" style="--i: ${index + 1}">
+                    <div class="avatar">${member.avatar}</div>
+                    <h4>${member.name}</h4>
+                    <div class="role">${member.role}</div>
+                    <p>${member.desc}</p>
+                </div>
+            `).join('');
+            teamContainer.innerHTML = teamHTML;
+
+            // 2. 渲染学术成果
+            const pubContainer = document.getElementById('pub-container');
+            const pubHTML = websiteData.publications.map((pub, index) => `
+                <div class="pub-item fade-in-up" style="--i: ${index + 1}">
+                    <div class="pub-year">${pub.year}</div>
+                    <div class="pub-content">
+                        <h3>${pub.title}</h3>
+                        <p class="pub-authors">${pub.authors}</p>
+                        <p class="pub-journal">${pub.journal}</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link-btn" download>📄 下载 PDF (${pub.pdfSize})</a>
+                            ${pub.hasDoi ? '<a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">🔗 DOI</a>' : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            pubContainer.innerHTML = pubHTML;
+
+            // 3. 导航栏动态高度补偿
             const navbar = document.getElementById('navbar');
-            const setNavHeight = () => {
-                document.documentElement.style.setProperty('--nav-height', `${navbar.offsetHeight}px`);
-            };
+            const setNavHeight = () => { document.documentElement.style.setProperty('--nav-height', `${navbar.offsetHeight}px`); };
             window.addEventListener('resize', setNavHeight);
             setNavHeight();
 
+            // 4. 交叉观察器触发动画
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
