@@ -175,7 +175,7 @@ const websiteData = {
       "cardsPerRow": 3,
       "members": [
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/30.jpg",
           "name": {
             "zh": "王博士",
             "en": "Dr. Wang"
@@ -190,7 +190,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/29.jpg",
           "name": {
             "zh": "李工",
             "en": "Engineer Li"
@@ -205,7 +205,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/28.jpg",
           "name": {
             "zh": "李工",
             "en": "Engineer Li"
@@ -220,7 +220,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/27.jpg",
           "name": {
             "zh": "李工",
             "en": "Engineer Li"
@@ -235,7 +235,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/26.jpg",
           "name": {
             "zh": "李工",
             "en": "Engineer Li"
@@ -261,7 +261,7 @@ const websiteData = {
       "cardsPerRow": 4,
       "members": [
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/25.jpg",
           "name": {
             "zh": "张同学",
             "en": "Zhang"
@@ -276,7 +276,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/24.jpg",
           "name": {
             "zh": "赵同学",
             "en": "Zhao"
@@ -291,7 +291,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/23.jpg",
           "name": {
             "zh": "赵同学",
             "en": "Zhao"
@@ -306,7 +306,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/1.jpg",
           "name": {
             "zh": "赵同学",
             "en": "Zhao"
@@ -321,7 +321,7 @@ const websiteData = {
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "avatarImg": "https://randomuser.me/api/portraits/men/1.jpg",
           "name": {
             "zh": "赵同学",
             "en": "Zhao"
