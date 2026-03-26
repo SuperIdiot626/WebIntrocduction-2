@@ -23,54 +23,20 @@
         .btn-primary { display: inline-block; background-color: var(--primary-color); color: #ffffff; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.2s; border: none; cursor: pointer; font-size: 1rem; }
         .btn-primary:hover { background-color: #003366; }
         
-        /* 全局通用板块宽度 */
         section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 3rem; text-align: left; color: var(--text-main); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
         
-        /* ========================================= */
-        /* 修改点 1：解除研究领域板块的宽度封印 */
-        /* ========================================= */
-        #architecture { 
-            max-width: 1600px; /* 从 1200px 放宽到 1600px，让卡片有充足的横向空间 */
-        }
-        
-        /* ========================================= */
-        /* 修改点 2：强行锁死标题的宽度，保持视觉对齐 */
-        /* ========================================= */
-        #architecture .section-title { 
-            max-width: 1080px; /* 1200px 减去两边 5% 的内边距，使其与下方其他板块的标题精确对齐 */
-            margin-left: auto; 
-            margin-right: auto; 
-        }
-
-        .research-grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 2rem; 
-            max-width: 1500px; /* 控制阵列的最大舒展范围 */
-            margin: 0 auto;
-        }
-        
-        .research-grid .card { 
-            background-color: var(--bg-surface); 
-            border: 1px solid var(--border-color); 
-            border-radius: 12px; 
-            box-shadow: var(--shadow-sm); 
-            transition: transform 0.2s, box-shadow 0.2s;
-            /* 保证不管填几，计算都不会崩盘 */
-            flex: 0 0 calc((100% - (2rem * (var(--cards-per-row, 4) - 1))) / var(--cards-per-row, 4));
-            /* 修改点 3：略微减小左右留白，给文字让路 */
-            padding: 3rem 2rem; 
-            display: flex;
-            flex-direction: column;
-        }
+        /* 研究领域 */
+        #architecture { max-width: 1600px; }
+        #architecture .section-title { max-width: 1080px; margin-left: auto; margin-right: auto; }
+        .research-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1500px; margin: 0 auto; }
+        .research-grid .card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; flex: 0 0 calc((100% - (2rem * (var(--cards-per-row, 4) - 1))) / var(--cards-per-row, 4)); padding: 3rem 2rem; display: flex; flex-direction: column; }
         .research-grid .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
         .research-grid .card-icon { font-size: 3.5rem; margin-bottom: 1.5rem; display: block; }
         .research-grid .card h3 { color: var(--text-main); font-size: 1.4rem; margin-bottom: 1rem; }
-        .research-grid .card p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; flex-grow: 1; margin: 0; }
+        .research-grid .card p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; flex-grow: 1; margin: 0; max-width: 65ch; }
 
-        /* 团队成员 (维持相对紧凑的尺寸) */
+        /* 团队成员 */
         .team-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
         .team-card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; padding: 2.5rem 2rem; text-align: center; }
         .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
@@ -79,16 +45,57 @@
         .avatar { width: 96px; height: 96px; background-color: var(--border-color); border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: var(--text-secondary); }
         .team-card .role { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; }
         
-        /* 列表与表单 */
-        .pub-list { display: flex; flex-direction: column; gap: 2.5rem; }
-        .pub-item { display: flex; gap: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2.5rem; }
-        .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
-        .pub-year { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); min-width: 80px; padding-top: 0.25rem; }
-        .pub-content { flex: 1; }
-        .pub-content h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; line-height: 1.4; margin-top: 0; }
-        .pub-authors { color: var(--text-main); font-weight: 500; margin-bottom: 0.25rem; font-size: 0.95rem; }
-        .pub-journal { color: var(--text-secondary); font-style: italic; margin-bottom: 1.25rem; font-size: 0.9rem; }
-        .pub-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+        /* ========================================= */
+        /* 修改点 1：学术成果横向滚动布局 */
+        /* ========================================= */
+        .pub-list { 
+            display: flex; 
+            gap: 2rem; 
+            overflow-x: auto; /* 允许横向滚动 */
+            padding-bottom: 2rem; /* 给下方的滚动条留出呼吸空间 */
+            padding-top: 1rem;
+            scroll-snap-type: x mandatory; /* 开启 X 轴滚动吸附 */
+            -webkit-overflow-scrolling: touch; /* 移动端惯性滚动支持 */
+            
+            /* 定制滚动条样式 */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--primary-color) var(--border-color); /* Firefox */
+        }
+        
+        /* Webkit 内核（Chrome, Safari, Edge）的自定义滚动条 */
+        .pub-list::-webkit-scrollbar { height: 8px; }
+        .pub-list::-webkit-scrollbar-track { background: var(--bg-body); border-radius: 4px; }
+        .pub-list::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 4px; }
+
+        .pub-item { 
+            flex: 0 0 450px; /* 固定每张文献卡片的宽度为 450px */
+            scroll-snap-align: start; /* 吸附点位于卡片开头处 */
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .pub-item:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+        
+        .pub-year { 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            color: var(--primary-color); 
+            margin-bottom: 1rem; 
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            align-self: flex-start;
+            padding-bottom: 0.2rem;
+        }
+        .pub-content { flex: 1; display: flex; flex-direction: column; }
+        .pub-content h3 { font-size: 1.15rem; color: var(--text-main); margin-bottom: 0.8rem; line-height: 1.5; margin-top: 0; flex-grow: 1; }
+        .pub-authors { color: var(--text-main); font-weight: 500; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .pub-journal { color: var(--text-secondary); font-style: italic; margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .pub-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: auto; }
         .pub-link-btn { text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 0.85rem; border: 1px solid var(--primary-color); padding: 0.35rem 1rem; border-radius: 4px; transition: all 0.2s; }
         .pub-link-btn:hover { background-color: var(--primary-color); color: #ffffff; }
         
@@ -110,13 +117,12 @@
         .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 800px; margin: 0 auto 2.5rem auto; }
         
         @media (max-width: 1024px) { 
-            .research-grid .card { flex: 0 0 calc((100% - 2rem) / 2); } /* 平板强制两列 */
+            .research-grid .card { flex: 0 0 calc((100% - 2rem) / 2); } 
         }
         @media (max-width: 600px) { 
             .nav-links a { display: none; } 
-            .research-grid .card { flex: 0 0 100%; } /* 手机强制单列 */
-            .pub-item { flex-direction: column; gap: 0.5rem; } 
-            .pub-year { font-size: 1.2rem; padding-top: 0; } 
+            .research-grid .card { flex: 0 0 100%; } 
+            .pub-item { flex: 0 0 85%; } /* 移动端让出一点边缘，提示用户可以滑动 */
             .contact-container { grid-template-columns: 1fr; gap: 3rem; padding: 2rem; } 
         }
     </style>
@@ -149,7 +155,11 @@
     </section>
 
     <section id="team"><h2 class="section-title fade-in-up" style="--i: 0" data-i18n="sections.team"></h2><div class="team-grid" id="team-container"></div></section>
-    <section id="publications"><h2 class="section-title fade-in-up" style="--i: 0" data-i18n="sections.pubs"></h2><div class="pub-list" id="pub-container"></div></section>
+    
+    <section id="publications">
+        <h2 class="section-title fade-in-up" style="--i: 0" data-i18n="sections.pubs"></h2>
+        <div class="pub-list" id="pub-container"></div>
+    </section>
     
     <section id="contact">
         <h2 class="section-title fade-in-up" style="--i: 0" data-i18n="sections.contact"></h2>
@@ -186,7 +196,7 @@
             setNavHeight();
 
             if (typeof websiteData !== 'undefined') {
-                const cardsPerRow = websiteData.config?.researchCardsPerRow || 4; // 默认为 4
+                const cardsPerRow = websiteData.config?.researchCardsPerRow || 4; 
                 document.getElementById('research-container').style.setProperty('--cards-per-row', cardsPerRow);
                 renderPage();
             } else {
@@ -226,6 +236,7 @@
                 </div>
             `).join('');
 
+            // 修改点 2：将成果卡片的渲染模板更新为适应卡片形态的结构
             document.getElementById('pub-container').innerHTML = websiteData.pubData.map((pub, index) => `
                 <div class="pub-item fade-in-up" style="--i: ${index + 1}">
                     <div class="pub-year">${pub.year}</div>
@@ -235,7 +246,7 @@
                         <p class="pub-journal">${pub.journal[currentLang]}</p>
                         <div class="pub-links">
                             <a href="#" class="pub-link-btn" download>📄 PDF (${pub.pdfSize})</a>
-                            ${pub.hasDoi ? '<a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">🔗 DOI</a>' : ''}
+                            ${pub.hasDoi ? `<a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">🔗 DOI</a>` : ''}
                         </div>
                     </div>
                 </div>

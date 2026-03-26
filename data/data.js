@@ -1,6 +1,4 @@
 const websiteData = {
-
-
   "nav": {
     "brand": {
       "zh": "多模型协作系统研究组",
@@ -66,6 +64,7 @@ const websiteData = {
   },
 
 
+  // 研究领域配置
   "config": {
     "researchCardsPerRow": 3  // 你可以在这里改成 2, 3, 4... 来控制每行最多显示几个研究领域
   },
@@ -126,6 +125,8 @@ const websiteData = {
       }
     }
   ],
+
+  // 团队成员
   "teamData": [
     {
       "avatar": {
@@ -182,6 +183,8 @@ const websiteData = {
       }
     }
   ],
+
+  // 文章信息
   "pubData": [
     {
       "year": "2026",
@@ -216,8 +219,128 @@ const websiteData = {
       },
       "pdfSize": "1.8 MB",
       "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
+    },
+    {
+      "year": "2025",
+      "title": {
+        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
+        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+      },
+      "authors": {
+        "zh": "Liu, M., Chen, W., Zhang, H.",
+        "en": "Liu, M., Chen, W., Zhang, H."
+      },
+      "journal": {
+        "zh": "Proceedings of the ICSE '25",
+        "en": "Proceedings of the ICSE '25"
+      },
+      "pdfSize": "1.8 MB",
+      "hasDoi": false
     }
   ],
+
   "contactInfo": {
     "title": {
       "zh": "保持沟通",
@@ -240,6 +363,7 @@ const websiteData = {
       "en": "Email Address"
     }
   },
+
   "contactForm": {
     "title": {
       "zh": "发送消息",
@@ -262,6 +386,7 @@ const websiteData = {
       "en": "Submit Message"
     }
   },
+
   "footer": {
     "zh": "© 2026 核心架构工程团队. 保留所有权利.",
     "en": "© 2026 Core Architecture Engineering Team. All rights reserved."
