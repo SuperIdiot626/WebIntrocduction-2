@@ -72,6 +72,52 @@
         .team-card p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
         .avatar { width: 96px; height: 96px; background-color: var(--border-color); border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: var(--text-secondary); }
         .team-card .role { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; }
+        
+        
+        /* ========================================= */
+        /* 新增：领导专属的横向宽幅卡片样式          */
+        /* ========================================= */
+        .team-card-leader {
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+            text-align: left; /* 文字左对齐 */
+            gap: 3rem; /* 头像与文字的间距 */
+            padding: 3rem 4rem;
+        }
+        
+        /* 针对横向卡片里的头像，取消居中并稍微放大 */
+        .team-card-leader .avatar {
+            margin: 0; 
+            width: 120px; 
+            height: 120px;
+            flex-shrink: 0;
+            font-size: 2.5rem;
+        }
+
+        .team-card-leader .leader-info {
+            flex: 1; /* 让文字部分占满右侧剩余空间 */
+        }
+
+        .team-card-leader h4 {
+            font-size: 1.5rem; /* 名字稍微放大 */
+            margin-bottom: 0.5rem;
+        }
+
+        /* 移动端适配：屏幕变窄时，强行把横向卡片折叠回上下结构 */
+        @media (max-width: 768px) {
+            .team-card-leader {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 2.5rem 2rem;
+            }
+            .team-card-leader .avatar { margin: 0 auto; }
+        }
+
+
+
+
 
         /* 找到底部的媒体查询 @media，将 .team-card 加进响应式强覆盖中 */
         @media (max-width: 1024px) { 
@@ -265,24 +311,41 @@
                 </div>
             `).join('');
 
-            // 3. 渲染核心团队
+            // 3. 渲染核心团队（根据排版设置动态切换卡片结构）
             document.getElementById('team-container').innerHTML = websiteData.teamData.map((category) => `
                 <div class="team-category">
                     <h3 class="team-category-title fade-in-up" style="--i: 0">${category.categoryTitle[currentLang]}</h3>
                     <div class="team-grid" style="--team-cards-per-row: ${category.cardsPerRow || 3};">
-                        ${(category.members || []).map((member, index) => `
-                            <div class="team-card fade-in-up" style="--i: ${index + 1}">
-                                <div class="avatar">${member.avatar[currentLang]}</div>
-                                <h4>${member.name[currentLang]}</h4>
-                                <div class="role">${member.role[currentLang]}</div>
-                                <p>${member.desc[currentLang]}</p>
-                            </div>
-                        `).join('')}
+                        ${(category.members || []).map((member, index) => {
+                            // 判断逻辑：如果这个组设定为一行只放1个卡片，就判定为领导横向排版
+                            const isLeaderLayout = category.cardsPerRow === 1;
+                            
+                            if (isLeaderLayout) {
+                                return `
+                                <div class="team-card team-card-leader fade-in-up" style="--i: ${index + 1}">
+                                    <div class="avatar">${member.avatar[currentLang]}</div>
+                                    <div class="leader-info">
+                                        <h4>${member.name[currentLang]}</h4>
+                                        <div class="role">${member.role[currentLang]}</div>
+                                        <p>${member.desc[currentLang]}</p>
+                                    </div>
+                                </div>`;
+                            } else {
+                                // 教师和学生的常规垂直居中排版
+                                return `
+                                <div class="team-card fade-in-up" style="--i: ${index + 1}">
+                                    <div class="avatar">${member.avatar[currentLang]}</div>
+                                    <h4>${member.name[currentLang]}</h4>
+                                    <div class="role">${member.role[currentLang]}</div>
+                                    <p>${member.desc[currentLang]}</p>
+                                </div>`;
+                            }
+                        }).join('')}
                     </div>
                 </div>
             `).join('');
 
-// 4. 渲染学术成果（带数量限制与更多按钮）
+            // 4. 渲染学术成果（带数量限制与更多按钮）
             const maxPubs = websiteData.config?.maxHomePubs || 10;
             const pubsToDisplay = websiteData.pubData.slice(0, maxPubs); // 截取前 N 个
             const hasMore = websiteData.pubData.length > maxPubs; // 判断是否还有更多
