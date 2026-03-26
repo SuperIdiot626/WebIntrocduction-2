@@ -37,14 +37,52 @@
         .research-grid .card p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; flex-grow: 1; margin: 0; max-width: 65ch; }
 
         /* 团队成员 */
-        .team-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-        .team-card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s; padding: 2.5rem 2rem; text-align: center; }
+        /* 新增：团队分级标题的样式 */
+        .team-category { margin-bottom: 4rem; }
+        .team-category:last-child { margin-bottom: 0; }
+        .team-category-title { 
+            font-size: 1.4rem; 
+            color: var(--primary-color); 
+            margin-bottom: 2rem; 
+            padding-bottom: 0.5rem; 
+            border-bottom: 1px solid var(--border-color);
+            display: inline-block;
+        }
+
+        /*.team-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }*/
+        .team-category .team-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; /* 居中对齐，让数量不足时自动向中间靠拢 */
+            gap: 2rem; 
+        }
+        .team-card { 
+            background-color: var(--bg-surface); 
+            border: 1px solid var(--border-color); 
+            border-radius: 8px; 
+            box-shadow: var(--shadow-sm); 
+            transition: transform 0.2s, box-shadow 0.2s; 
+            padding: 2.5rem 2rem; 
+            text-align: center; 
+            /* 核心：读取 HTML 行内注入的变量进行动态宽度分割 */
+            flex: 0 0 calc((100% - (2rem * (var(--team-cards-per-row, 4) - 1))) / var(--team-cards-per-row, 4));
+        }
         .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
         .team-card h4 { color: var(--text-main); margin-bottom: 1rem; }
         .team-card p { color: var(--text-secondary); font-size: 0.95rem; margin: 0; }
         .avatar { width: 96px; height: 96px; background-color: var(--border-color); border-radius: 50%; margin: 0 auto 1.5rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: var(--text-secondary); }
         .team-card .role { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; margin-bottom: 1rem; }
-        
+
+        /* 找到底部的媒体查询 @media，将 .team-card 加进响应式强覆盖中 */
+        @media (max-width: 1024px) { 
+            .research-grid .card, .team-card { flex: 0 0 calc((100% - 2rem) / 2); } 
+        }
+        @media (max-width: 600px) { 
+            .nav-links a { display: none; } 
+            .research-grid .card, .team-card { flex: 0 0 100%; } 
+            .pub-item { flex: 0 0 85%; } 
+            .contact-container { grid-template-columns: 1fr; gap: 3rem; padding: 2rem; } 
+        }
         /* ========================================= */
         /* 修改点 1：学术成果横向滚动布局 */
         /* ========================================= */
@@ -227,12 +265,20 @@
                 </div>
             `).join('');
 
-            document.getElementById('team-container').innerHTML = websiteData.teamData.map((member, index) => `
-                <div class="team-card fade-in-up" style="--i: ${index + 1}">
-                    <div class="avatar">${member.avatar[currentLang]}</div>
-                    <h4>${member.name[currentLang]}</h4>
-                    <div class="role">${member.role[currentLang]}</div>
-                    <p>${member.desc[currentLang]}</p>
+            // 3. 渲染核心团队
+            document.getElementById('team-container').innerHTML = websiteData.teamData.map((category) => `
+                <div class="team-category">
+                    <h3 class="team-category-title fade-in-up" style="--i: 0">${category.categoryTitle[currentLang]}</h3>
+                    <div class="team-grid" style="--team-cards-per-row: ${category.cardsPerRow || 3};">
+                        ${(category.members || []).map((member, index) => `
+                            <div class="team-card fade-in-up" style="--i: ${index + 1}">
+                                <div class="avatar">${member.avatar[currentLang]}</div>
+                                <h4>${member.name[currentLang]}</h4>
+                                <div class="role">${member.role[currentLang]}</div>
+                                <p>${member.desc[currentLang]}</p>
+                            </div>
+                        `).join('')}
+                    </div>
                 </div>
             `).join('');
 
