@@ -1,4 +1,6 @@
 const websiteData = {
+
+
   "nav": {
     "brand": {
       "zh": "多模型协作系统研究组",
@@ -43,6 +45,7 @@ const websiteData = {
       "en": "Collaborate With Us"
     }
   },
+  
   "sections": {
     "architecture": {
       "zh": "系统核心与研究领域",
@@ -60,6 +63,11 @@ const websiteData = {
       "zh": "联系我们",
       "en": "Contact Us"
     }
+  },
+
+
+  "config": {
+    "researchCardsPerRow": 3  // 你可以在这里改成 2, 3, 4... 来控制每行最多显示几个研究领域
   },
   "researchData": [
     {
@@ -93,6 +101,17 @@ const websiteData = {
       "desc": {
         "zh": "将宏观评估转化为高精度的底层工程蓝图，生成详尽的技术规格、接口定义与组件参数组合。",
         "en": "Translate macro evaluations into high-precision engineering blueprints, generating detailed technical specifications."
+      }
+    },
+    {
+      "icon": "⚙️",
+      "title": {
+        "zh": "仿真与验证模型",
+        "en": "Simulation & Validation Model"
+      },
+      "desc": {
+        "zh": "具备大批量分析处理能力，在虚拟环境中进行高并发压力测试与逻辑推演，确保四大模型协同运转的绝对稳定。",
+        "en": "Conduct high-concurrency stress testing and logical deduction in virtual environments to ensure absolute stability."
       }
     },
     {
