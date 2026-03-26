@@ -149,7 +149,7 @@ const websiteData = {
       "cardsPerRow": 1,
       "members": [
         {
-          "avatar": { "zh": "陈", "en": "C" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "陈博士 (Ph.D.)", "en": "Dr. Chen (Ph.D.)" },
           "role": { "zh": "首席架构师 / PI", "en": "Chief Architect / PI" },
           "desc": { "zh": "主导四大模型互联的宏观系统架构设计，统筹全链路智能化工程的闭环演进。", "en": "Leads the macro system architecture design of four interconnected models." }
@@ -167,31 +167,31 @@ const websiteData = {
       "cardsPerRow": 3,
       "members": [
         {
-          "avatar": { "zh": "王", "en": "W" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "王博士", "en": "Dr. Wang" },
           "role": { "zh": "大模型架构研究员", "en": "LLM Architecture Researcher" },
           "desc": { "zh": "主攻 MoE 混合专家模型设计与 RLVR 对齐，负责前置“方案设计模型”的核心优化。", "en": "Focuses on MoE hybrid expert model design and RLVR alignment." }
         },
         {
-          "avatar": { "zh": "李", "en": "L" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "李工", "en": "Engineer Li" },
           "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
           "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
         },
         {
-          "avatar": { "zh": "李", "en": "L" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "李工", "en": "Engineer Li" },
           "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
           "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
         },
         {
-          "avatar": { "zh": "李", "en": "L" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "李工", "en": "Engineer Li" },
           "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
           "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
         },
         {
-          "avatar": { "zh": "李", "en": "L" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "李工", "en": "Engineer Li" },
           "role": { "zh": "语义解析总监", "en": "Semantic Parsing Director" },
           "desc": { "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。", "en": "Deeply engaged in structural extraction of NLP and data cleaning engines." }
@@ -208,31 +208,31 @@ const websiteData = {
       "cardsPerRow": 4,
       "members": [
         {
-          "avatar": { "zh": "张", "en": "Z" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "张同学", "en": "Zhang" },
           "role": { "zh": "博士研究生", "en": "Ph.D. Candidate" },
           "desc": { "zh": "研究方向为虚拟沙箱仿真与多智能体强化学习验证。", "en": "Research focuses on virtual sandbox simulation and multi-agent RL validation." }
         },
         {
-          "avatar": { "zh": "赵", "en": "Z" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "赵同学", "en": "Zhao" },
           "role": { "zh": "硕士研究生", "en": "Master Student" },
           "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
         },
         {
-          "avatar": { "zh": "赵", "en": "Z" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "赵同学", "en": "Zhao" },
           "role": { "zh": "硕士研究生", "en": "Master Student" },
           "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
         },
         {
-          "avatar": { "zh": "赵", "en": "Z" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "赵同学", "en": "Zhao" },
           "role": { "zh": "硕士研究生", "en": "Master Student" },
           "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
         },
         {
-          "avatar": { "zh": "赵", "en": "Z" },
+          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
           "name": { "zh": "赵同学", "en": "Zhao" },
           "role": { "zh": "硕士研究生", "en": "Master Student" },
           "desc": { "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。", "en": "Participates in data cleaning and performance regression testing." }
@@ -258,6 +258,7 @@ const websiteData = {
         "en": "IEEE Transactions on Software Engineering, 52(4)"
       },
       "pdfSize": "2.4 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": true
     },
     {
@@ -275,6 +276,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -292,6 +294,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -309,6 +312,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -326,6 +330,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -343,6 +348,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -360,6 +366,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -377,6 +384,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     },
     {
@@ -394,6 +402,7 @@ const websiteData = {
         "en": "Proceedings of the ICSE '25"
       },
       "pdfSize": "1.8 MB",
+      "pdfLink": "files/paper_2025.pdf",
       "hasDoi": false
     }
   ],
