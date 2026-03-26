@@ -27,7 +27,15 @@ const websiteData = {
     "langBtn": {
       "zh": "🌐 English",
       "en": "🌐 中文"
-    }
+    },
+    "backHome": { 
+      "zh": "⬅ 返回首页", 
+      "en": "⬅ Back to Home" 
+    }, // 新增：返回按钮
+    "allPubs": { 
+      "zh": "所有学术成果", 
+      "en": "All Publications" 
+    } // 新增：独立页面标题
   },
   "hero": {
     "title": {
@@ -60,13 +68,17 @@ const websiteData = {
     "contact": {
       "zh": "联系我们",
       "en": "Contact Us"
-    }
+    },
+    "pubs": { "zh": "学术成果与技术白皮书", "en": "Publications & Whitepapers" },
+    "contact": { "zh": "联系我们", "en": "Contact Us" },
+    "morePubsBtn": { "zh": "查看更多成果 ➔", "en": "View All Publications ➔" } // 新增：查看更多按钮
   },
 
 
   // 研究领域配置
   "config": {
-    "researchCardsPerRow": 3  // 你可以在这里改成 2, 3, 4... 来控制每行最多显示几个研究领域
+    "researchCardsPerRow": 3,  // 你可以在这里改成 2, 3, 4... 来控制每行最多显示几个研究领域
+    "maxHomePubs": 5  // 新增：首页最多显示的学术成果数量
   },
   "researchData": [
     {

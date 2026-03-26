@@ -282,8 +282,12 @@
                 </div>
             `).join('');
 
-            // 修改点 2：将成果卡片的渲染模板更新为适应卡片形态的结构
-            document.getElementById('pub-container').innerHTML = websiteData.pubData.map((pub, index) => `
+// 4. 渲染学术成果（带数量限制与更多按钮）
+            const maxPubs = websiteData.config?.maxHomePubs || 10;
+            const pubsToDisplay = websiteData.pubData.slice(0, maxPubs); // 截取前 N 个
+            const hasMore = websiteData.pubData.length > maxPubs; // 判断是否还有更多
+
+            let pubHTML = pubsToDisplay.map((pub, index) => `
                 <div class="pub-item fade-in-up" style="--i: ${index + 1}">
                     <div class="pub-year">${pub.year}</div>
                     <div class="pub-content">
@@ -297,6 +301,18 @@
                     </div>
                 </div>
             `).join('');
+
+            // 如果文献总数超过限制，在横向滚动的末尾追加一个特殊的“更多”卡片
+            if (hasMore) {
+                pubHTML += `
+                <div class="pub-item fade-in-up" style="--i: ${pubsToDisplay.length + 1}; display: flex; align-items: center; justify-content: center; background-color: transparent; border: 2px dashed var(--border-color); cursor: pointer;" onclick="window.location.href='publications.html'">
+                    <a href="publications.html" style="text-decoration: none; color: var(--primary-color); font-size: 1.2rem; font-weight: bold;">
+                        ${websiteData.sections.morePubsBtn[currentLang]}
+                    </a>
+                </div>`;
+            }
+
+            document.getElementById('pub-container').innerHTML = pubHTML;
 
             initAnimations();
         }
