@@ -115,7 +115,7 @@ const websiteData = {
       }
     },
     {
-      "icon": "⚙️",
+      "icon": "💻",
       "title": {
         "zh": "仿真与验证模型",
         "en": "Simulation & Validation Model"
@@ -149,18 +149,32 @@ const websiteData = {
       "cardsPerRow": 1,
       "members": [
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/32.jpg",
+          "id": "leader1",
+          "avatarImg": "images/1-leaders/ZhangWeiwei.png",
           "name": {
-            "zh": "陈博士 (Ph.D.)",
-            "en": "Dr. Chen (Ph.D.)"
+            "zh": "张伟伟",
+            "en": "Zhang Weiwei"
           },
           "role": {
-            "zh": "首席架构师 / PI",
-            "en": "Chief Architect / PI"
+            "zh": "教授 & 研究组负责人",
+            "en": "Professor & Group Lead"
+          },
+          "department": {
+            "zh": "西北工业大学流体力学",
+            "en": "Department of Aerodynamics, Northwestern Polytechnical University"
           },
           "desc": {
-            "zh": "主导四大模型互联的宏观系统架构设计，统筹全链路智能化工程的闭环演进。",
-            "en": "Leads the macro system architecture design of four interconnected models."
+            "zh": "西北工业大学博士，现任西北工业大学航空学院党委委员、教授，流体力学智能化国际联合研究所所长，中国空气动力学会副理事长，国家级领军人才。<br><br>主要从事智能空气动力学、气动弹性力学与非定常空气动力学研究，发表论文200余篇，Google学术H因子42，撰写《跨声速气动弹性力学》等专著4部。<br><br>主持国家重点研发计划、国家自然科学基金集成项目等国家级课题20余项，包括“电功率兆瓦级新能源航空器关键技术”等重点项目。获国防科技进步奖、航空学会青年科技奖、空气动力学会首届青年科技奖等荣誉。<br><br>担任《Journal of Aircraft》副主编、《空气动力学学报》副主编等学术职务。",
+            "en": "Ph.D., Professor, Member of the Party Committee of the School of Aeronautics, Northwestern Polytechnical University (NPU), Director of the International Joint Research Institute for Intelligent Aerodynamics, Vice Chairman of the Chinese Society of Aerodynamics, and National Level Leading Talent. <br><br> Mainly engaged in research on intelligent aerodynamics, aeroelasticity and unsteady aerodynamics, having published more than 200 papers with a Google Scholar H-index of 42, and authored 4 monographs including \"Transonic Aeroelasticity\". <br><br> Presided over more than 20 national-level projects such as the National Key R&D Program and the Integrated Project of the National Natural Science Foundation, including key projects such as \"Key Technologies for Megawatt-level New Energy Aircraft with Electric Power\". He has won honors such as the National Defense Science and Technology Progress Award, the Youth Science and Technology Award of the Chinese Society of Aeronautics, and the First Youth Science and Technology Award of the Chinese Society of Aerodynamics. <br><br> Serves as Associate Editor of \"Journal of Aircraft\", Associate Editor of \"Acta Aerodynamica Sinica\" and other academic positions."
+          },
+          "interests": {
+            "zh": ["计算设计", "人工智能 + 制造"],
+            "en": ["Computational Design", "Artificial Intelligence + Manufacturing"]
+          },
+          "contact": {
+            "email": "aeroelastic@nwpu.edu.cn",
+            "website": "https://jszy.nwpu.edu.cn/7w1gn672804dz7xr79v1429868736830.html",
+            "scholar": "#"
           }
         }
       ]
@@ -175,84 +189,110 @@ const websiteData = {
       "cardsPerRow": 3,
       "members": [
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/30.jpg",
+          "id": "member1",
+          "avatarImg": "images/2-faculties/SongShufang.png",
           "name": {
-            "zh": "王博士",
-            "en": "Dr. Wang"
+            "zh": "宋述芳",
+            "en": "Song Shufang"
           },
           "role": {
-            "zh": "大模型架构研究员",
-            "en": "LLM Architecture Researcher"
+            "zh": "教授 & 研究组负责人",
+            "en": "Professor & Group Lead"
+          },
+          "department": {
+            "zh": "计算设计 | 西北工业大学航空学院",
+            "en": "Computational Design | School of Aeronautics, NPU"
           },
           "desc": {
-            "zh": "主攻 MoE 混合专家模型设计与 RLVR 对齐，负责前置“方案设计模型”的核心优化。",
-            "en": "Focuses on MoE hybrid expert model design and RLVR alignment."
+            "zh": "宋教授是西北工业大学航空学院教授。她的研究重点是开发用于设计和制造的计算工具，应用于航空航天工程、产品设计和可持续制造领域。她拥有清华大学博士学位，并在顶级期刊和会议上发表了100多篇同行评审论文。",
+            "en": "Professor Song is a Professor at the School of Aeronautics, Northwestern Polytechnical University. Her research focuses on developing computational tools for design and fabrication, with applications in aerospace engineering, product design, and sustainable manufacturing. She received her PhD from Tsinghua University and has published over 100 peer-reviewed papers in top journals and conferences."
+          },
+          "interests": {
+            "zh": ["计算设计优化", "生成式设计算法", "数字制造工作流", "可持续材料系统"],
+            "en": ["Computational design optimization", "Generative design algorithms", "Digital fabrication workflows", "Sustainable material systems"]
+          },
+          "publications": [
+            { "title": { "zh": "pdf文档下载功能测试", "en": "Test For PDF Download Function" }, "link": "info/faculties/SongShufang/test.pdf" },
+            { "title": { "zh": "可持续航空航天设计的生成算法 (2022)", "en": "Generative Algorithms for Sustainable Aerospace Design (2022)" }, "link": "#" },
+            { "title": { "zh": "人在环中的设计系统 (2021)", "en": "Human-in-the-Loop Design Systems (2021)" }, "link": "#" }
+          ],
+          "contact": {
+            "email": "songshufang@npu.edu.cn",
+            "website": "#",
+            "scholar": "#"
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/29.jpg",
+          "id": "member2",
+          "avatarImg": "images/2-faculties/WuXiaojing.png",
           "name": {
-            "zh": "李工",
-            "en": "Engineer Li"
+            "zh": "邬晓敬",
+            "en": "Wu Xiaojing"
           },
           "role": {
-            "zh": "语义解析总监",
-            "en": "Semantic Parsing Director"
+            "zh": "副研究员",
+            "en": "Associate Researcher"
+          },
+          "department": {
+            "zh": "机器人与制造 | 西北工业大学机械工程学院",
+            "en": "Robotics & Fabrication | School of Mechanical Engineering, NPU"
           },
           "desc": {
-            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
-            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
+            "zh": "邬博士是西北工业大学机械工程学院的副研究员。他的工作重点是开发机器人制造系统以及设计和制造中的人机协作。他在为航空航天制造领域的数字制造流程开发定制硬件和软件解决方案方面拥有丰富经验。",
+            "en": "Dr. Wu is an Associate Researcher at the School of Mechanical Engineering, Northwestern Polytechnical University. His work focuses on the development of robotic fabrication systems and human-robot collaboration in design and manufacturing. He has extensive experience in developing custom hardware and software solutions for digital fabrication processes in aerospace manufacturing."
+          },
+          "interests": {
+            "zh": ["机器人制造", "人机交互", "自适应制造", "传感器集成"],
+            "en": ["Robotic fabrication", "Human-robot interaction", "Adaptive manufacturing", "Sensor integration"]
+          },
+          "publications": [
+            { "title": { "zh": "航空航天构件的协作机器人制造 (2023)", "en": "Collaborative Robotic Fabrication for Aerospace Components (2023)" }, "link": "#" },
+            { "title": { "zh": "钛合金增材制造的自适应控制 (2022)", "en": "Adaptive Control for Additive Manufacturing of Titanium Alloys (2022)" }, "link": "#" }
+          ],
+          "contact": {
+            "email": "wuxiaojing@npu.edu.cn",
+            "website": "#",
+            "scholar": "#"
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/28.jpg",
+          "id": "member3",
+          "avatarImg": "images/2-faculties/LvZhen.png",
           "name": {
-            "zh": "李工",
-            "en": "Engineer Li"
+            "zh": "吕振",
+            "en": "Lyu Zhen"
           },
           "role": {
-            "zh": "语义解析总监",
-            "en": "Semantic Parsing Director"
+            "zh": "副研究员",
+            "en": "Associate Researcher"
+          },
+          "department": {
+            "zh": "人工智能与设计 | 西北工业大学计算机学院",
+            "en": "AI & Design | School of Computer Science, NPU"
           },
           "desc": {
-            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
-            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
-          }
-        },
-        {
-          "avatarImg": "https://randomuser.me/api/portraits/men/27.jpg",
-          "name": {
-            "zh": "李工",
-            "en": "Engineer Li"
+            "zh": "吕博士是西北工业大学计算机学院的副研究员，他开发增强人类创造力的人工智能设计工具。他的研究结合了机器学习、人机交互和设计理论，为航空航天工程创建更直观和包容的设计系统。",
+            "en": "Dr. Lyu is an Associate Researcher at the School of Computer Science, Northwestern Polytechnical University, where he develops AI-powered design tools that augment human creativity. His research combines machine learning, human-computer interaction, and design theory to create more intuitive and inclusive design systems for aerospace engineering."
           },
-          "role": {
-            "zh": "语义解析总监",
-            "en": "Semantic Parsing Director"
+          "interests": {
+            "zh": ["人工智能辅助设计", "创意机器学习", "人机协作", "包容性设计工具"],
+            "en": ["AI-assisted design", "Creative machine learning", "Human-AI collaboration", "Inclusive design tools"]
           },
-          "desc": {
-            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
-            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
-          }
-        },
-        {
-          "avatarImg": "https://randomuser.me/api/portraits/men/26.jpg",
-          "name": {
-            "zh": "李工",
-            "en": "Engineer Li"
-          },
-          "role": {
-            "zh": "语义解析总监",
-            "en": "Semantic Parsing Director"
-          },
-          "desc": {
-            "zh": "深耕自然语言结构化提取，主导系统前置“需求分析”模块的数据清洗引擎。",
-            "en": "Deeply engaged in structural extraction of NLP and data cleaning engines."
+          "publications": [
+            { "title": { "zh": "创意航空航天设计的人工智能 (2023)", "en": "AI for Creative Aerospace Design (2023)" }, "link": "#" },
+            { "title": { "zh": "航空航天设计中以人为中心的人工智能 (2022)", "en": "Human-Centered AI in Aerospace Design (2022)" }, "link": "#" },
+            { "title": { "zh": "面向航空航天设计师的可解释人工智能 (2021)", "en": "Explainable AI for Aerospace Designers (2021)" }, "link": "#" }
+          ],
+          "contact": {
+            "email": "lvzhen@npu.edu.cn",
+            "website": "#",
+            "scholar": "#"
           }
         }
       ]
     },
 
-    // 学生团队
+    // 学生成员
     {
       "categoryTitle": {
         "zh": "硕博研究生 (Graduate Students)",
@@ -261,78 +301,208 @@ const websiteData = {
       "cardsPerRow": 4,
       "members": [
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/25.jpg",
+          "id": "student1",
+          "avatarImg": "images/3-researchers/YeZhiqiu.jpg",
           "name": {
-            "zh": "张同学",
-            "en": "Zhang"
+            "zh": "叶知秋",
+            "en": "Ye Zhiqiu"
           },
           "role": {
-            "zh": "博士研究生",
-            "en": "Ph.D. Candidate"
+            "zh": "博士后",
+            "en": "Postdoctoral Fellow"
+          },
+          "department": {
+            "zh": "计算设计",
+            "en": "Computational Design"
           },
           "desc": {
-            "zh": "研究方向为虚拟沙箱仿真与多智能体强化学习验证。",
-            "en": "Research focuses on virtual sandbox simulation and multi-agent RL validation."
+            "zh": "叶博士的博士后研究重点是开发可持续航空航天建筑设计的优化算法。他拥有西北工业大学计算设计硕士学位和哈尔滨工业大学航空航天工程学士学位。",
+            "en": "Dr. Ye's postdoctoral research focuses on developing optimization algorithms for sustainable aerospace building design. He holds a Master's degree in Computational Design from Northwestern Polytechnical University and a Bachelor's degree in Aerospace Engineering from Harbin Institute of Technology."
+          },
+          "publications": [
+            { "title": { "zh": "pdf文档下载功能测试", "en": "Test For PDF Download Function" }, "link": "info/students/YeZhiqiu/test.pdf" },
+            { "title": { "zh": "不存在的pdf文档下载功能测试1", "en": "Error Test For PDF Download Function" }, "link": "info/students/YeZhiqiu/a.pdf" },
+            { "title": { "zh": "不存在的pdf文档下载功能测试2", "en": "Error Test For PDF Download Function" }, "link": "#" }
+          ],
+          "projects": [
+            { "title": { "zh": "航空航天构件生成式设计工具 (2023)", "en": "Generative Design Tool for Aerospace Components (2023)" } }
+          ],
+          "contact": {
+            "github": "#",
+            "email": "yezhiqiu@npu.edu.cn"
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/24.jpg",
+          "id": "student2",
+          "avatarImg": "images/3-researchers/TanShenglian.jpg",
           "name": {
-            "zh": "赵同学",
-            "en": "Zhao"
+            "zh": "谭胜涟",
+            "en": "Tan Shenglian"
           },
           "role": {
-            "zh": "硕士研究生",
-            "en": "Master Student"
+            "zh": "博士后",
+            "en": "Postdoctoral Fellow"
+          },
+          "department": {
+            "zh": "机器人技术",
+            "en": "Robotics"
           },
           "desc": {
-            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
-            "en": "Participates in data cleaning and performance regression testing."
+            "zh": "谭博士的研究重点是模块化航空航天建筑的机器人装配系统。他拥有机械工程背景，并曾在中国航天科技集团和西门子数字工业软件实习。",
+            "en": "Dr. Tan's research focuses on robotic assembly systems for modular aerospace construction. He has a background in mechanical engineering and has interned at China Aerospace Science and Technology Corporation (CASC) and Siemens Digital Industries Software."
+          },
+          "publications": [
+            { "title": { "zh": "模块化航空航天结构的机器人装配 (2023)", "en": "Robotic Assembly for Modular Aerospace Structures (2023)" }, "link": "#" }
+          ],
+          "projects": [],
+          "contact": {
+            "github": "#",
+            "email": "tanshenglian@npu.edu.cn"
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/23.jpg",
+          "id": "student3",
+          "avatarImg": "images/3-researchers/ChenXin.jpg",
           "name": {
-            "zh": "赵同学",
-            "en": "Zhao"
+            "zh": "陈鑫",
+            "en": "Chen Xin"
           },
           "role": {
-            "zh": "硕士研究生",
-            "en": "Master Student"
+            "zh": "博士后",
+            "en": "Postdoctoral Fellow"
+          },
+          "department": {
+            "zh": "计算机科学",
+            "en": "Computer Science"
           },
           "desc": {
-            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
-            "en": "Participates in data cleaning and performance regression testing."
+            "zh": "陈博士是一名博士后研究员，从事航空航天生成式设计的机器学习模型研究。他拥有西北工业大学计算机科学博士学位，辅修航空航天设计。",
+            "en": "Dr. Chen is a postdoctoral researcher working on machine learning models for generative aerospace design. He holds a PhD in Computer Science from Northwestern Polytechnical University, with a minor in Aerospace Design."
+          },
+          "publications": [],
+          "projects": [
+            { "title": { "zh": "航空航天构件生成式设计工具 (2023)", "en": "Generative Design Tool for Aerospace Components (2023)" } }
+          ],
+          "contact": {
+            "github": "#",
+            "email": "chenxin@npu.edu.cn"
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/1.jpg",
+          "id": "student4",
+          "avatarImg": "images/3-researchers/WuXinyi.jpg",
           "name": {
-            "zh": "赵同学",
-            "en": "Zhao"
+            "zh": "吴心怡",
+            "en": "Wu Xinyi"
           },
           "role": {
-            "zh": "硕士研究生",
-            "en": "Master Student"
+            "zh": "研究员",
+            "en": "Research Fellow"
+          },
+          "department": {
+            "zh": "人机交互",
+            "en": "Human-Computer Interaction"
           },
           "desc": {
-            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
-            "en": "Participates in data cleaning and performance regression testing."
+            "zh": "吴博士的研究探索设计工具使用的文化差异，并为全球航空航天用户开发包容性设计界面。她拥有清华大学博士学位，专业方向为航空航天工程人机交互。",
+            "en": "Dr. Wu's research explores cultural differences in design tool usage and develops inclusive design interfaces for global aerospace users. She received her PhD from Tsinghua University, specializing in human-computer interaction for aerospace engineering."
+          },
+          "publications": [
+            { "title": { "zh": "航空航天工具的跨文化设计界面 (2023)", "en": "Cross-Cultural Design Interfaces for Aerospace Tools (2023)" }, "link": "#" },
+            { "title": { "zh": "面向航空航天工程师的包容性设计工具 (2022)", "en": "Inclusive Design Tools for Aerospace Engineers (2022)" }, "link": "#" }
+          ],
+          "projects": [],
+          "contact": {
+            "github": "#",
+            "email": "wuxinyi@npu.edu.cn"
           }
         },
         {
-          "avatarImg": "https://randomuser.me/api/portraits/men/1.jpg",
+          "id": "student5",
+          "avatarImg": "images/3-researchers/YuLuoning.jpg",
           "name": {
-            "zh": "赵同学",
-            "en": "Zhao"
+            "zh": "於罗宁",
+            "en": "Yu Luoning"
           },
           "role": {
-            "zh": "硕士研究生",
-            "en": "Master Student"
+            "zh": "研究员",
+            "en": "Research Fellow"
+          },
+          "department": {
+            "zh": "人机交互",
+            "en": "Human-Computer Interaction"
           },
           "desc": {
-            "zh": "参与详细产品设计模型的前端数据链路清洗与性能回归测试。",
-            "en": "Participates in data cleaning and performance regression testing."
+            "zh": "於博士的研究重点是航空航天设计工具开发中的人机协作，侧重于复杂工程系统的用户体验优化。他拥有中国科学技术大学博士学位，专业方向为航空航天工程人机交互。",
+            "en": "Dr. Yu's research focuses on human-AI collaboration in aerospace design tool development, with an emphasis on user experience optimization for complex engineering systems. He received his PhD from the University of Science and Technology of China, with a focus on human-computer interaction in aerospace engineering."
+          },
+          "publications": [
+            { "title": { "zh": "航空航天系统的跨文化设计界面 (2023)", "en": "Cross-Cultural Design Interfaces for Aerospace Systems (2023)" }, "link": "#" },
+            { "title": { "zh": "面向航空航天工程团队的包容性设计工具 (2022)", "en": "Inclusive Design Tools for Aerospace Engineering Teams (2022)" }, "link": "#" }
+          ],
+          "projects": [],
+          "contact": {
+            "github": "#",
+            "email": "yuluoning@npu.edu.cn"
+          }
+        },
+        {
+          "id": "student6",
+          "avatarImg": "images/3-researchers/WangYizhuang.jpg",
+          "name": {
+            "zh": "王亦庄",
+            "en": "Wang Yizhuang"
+          },
+          "role": {
+            "zh": "研究员",
+            "en": "Research Fellow"
+          },
+          "department": {
+            "zh": "人机交互",
+            "en": "Human-Computer Interaction"
+          },
+          "desc": {
+            "zh": "王博士的研究探索自然用户界面在航空航天设计工具中的应用，旨在提高复杂工程设计流程的效率和直观性。他拥有北京航空航天大学博士学位，专业方向为航空航天系统人机交互。",
+            "en": "Dr. Wang's research explores the application of natural user interfaces in aerospace design tools, aiming to improve the efficiency and intuitiveness of complex engineering design processes. He received his PhD from Beihang University, specializing in human-computer interaction for aerospace systems."
+          },
+          "publications": [
+            { "title": { "zh": "航空航天设计工具的自然用户界面 (2023)", "en": "Natural User Interfaces for Aerospace Design Tools (2023)" }, "link": "#" },
+            { "title": { "zh": "航空航天人机界面系统的包容性设计 (2022)", "en": "Inclusive Design for Aerospace HMI Systems (2022)" }, "link": "#" }
+          ],
+          "projects": [],
+          "contact": {
+            "github": "https://github.com/SuperIdiot626",
+            "email": "wangyizhuang@npu.edu.cn",
+            "website": "https://www.baidu.com"
+          }
+        },
+        {
+          "id": "student7",
+          "avatarImg": "images/3-researchers/ZuoZijun.jpg",
+          "name": {
+            "zh": "左子俊",
+            "en": "Zuo Zijun"
+          },
+          "role": {
+            "zh": "博士后",
+            "en": "Postdoctoral Fellow"
+          },
+          "department": {
+            "zh": "人机交互",
+            "en": "Human-Computer Interaction"
+          },
+          "desc": {
+            "zh": "左博士的博士后研究重点是航空航天设计工具的可解释人工智能，帮助工程师理解并信任人工智能生成的设计建议。他拥有上海交通大学博士学位，专业方向为航空航天工程机器学习与人机交互。",
+            "en": "Dr. Zuo's postdoctoral research focuses on explainable AI for aerospace design tools, helping engineers understand and trust AI-generated design recommendations. He received his PhD from Shanghai Jiao Tong University, specializing in machine learning and human-computer interaction for aerospace engineering."
+          },
+          "publications": [
+            { "title": { "zh": "面向航空航天设计决策的可解释人工智能 (2023)", "en": "Explainable AI for Aerospace Design Decision-Making (2023)" }, "link": "#" },
+            { "title": { "zh": "面向人工智能辅助航空航天工程的包容性设计工具 (2022)", "en": "Inclusive Design Tools for AI-Assisted Aerospace Engineering (2022)" }, "link": "#" }
+          ],
+          "projects": [],
+          "contact": {
+            "github": "#",
+            "email": "zuozijun@npu.edu.cn"
           }
         }
       ]
