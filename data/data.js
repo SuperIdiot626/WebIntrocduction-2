@@ -548,7 +548,7 @@ const websiteData = {
         "en": "Chinese Journal of Aeronautics, 47(2), 200-215"
       },
       "pdfSize": "3.12 MB",
-      "pdfLink": "files/paper_2026_01.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -566,7 +566,7 @@ const websiteData = {
         "en": "IEEE Transactions on Software Engineering, 52(4), 112-135"
       },
       "pdfSize": "2.45 MB",
-      "pdfLink": "files/paper_2026_02.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -584,7 +584,7 @@ const websiteData = {
         "en": "Acta Mechanica Sinica, 57(8), 1580-1595"
       },
       "pdfSize": "4.18 MB",
-      "pdfLink": "files/paper_2025_01.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -602,7 +602,7 @@ const websiteData = {
         "en": "Physics of Fluids, 37(10), 104105"
       },
       "pdfSize": "2.89 MB",
-      "pdfLink": "files/paper_2025_02.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -620,7 +620,7 @@ const websiteData = {
         "en": "Journal of Computational Physics, 412, 110486"
       },
       "pdfSize": "5.22 MB",
-      "pdfLink": "files/paper_2025_03.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -638,7 +638,7 @@ const websiteData = {
         "en": "AIAA Journal, 62(5), 1800-1815"
       },
       "pdfSize": "3.74 MB",
-      "pdfLink": "files/paper_2024_01.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -656,7 +656,7 @@ const websiteData = {
         "en": "Journal of Guidance, Control, and Dynamics, 47(12), 2900-2915"
       },
       "pdfSize": "2.15 MB",
-      "pdfLink": "files/paper_2024_02.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -674,7 +674,7 @@ const websiteData = {
         "en": "Chinese Journal of Aeronautics (English Edition), 37(4), 150-168"
       },
       "pdfSize": "3.41 MB",
-      "pdfLink": "files/paper_2024_03.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -692,7 +692,7 @@ const websiteData = {
         "en": "Advances in Aeronautical Science and Engineering, 14(2), 45-58"
       },
       "pdfSize": "4.56 MB",
-      "pdfLink": "files/paper_2023_01.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -710,7 +710,7 @@ const websiteData = {
         "en": "Acta Aerodynamica Sinica, 41(3), 12-25"
       },
       "pdfSize": "3.08 MB",
-      "pdfLink": "files/paper_2023_02.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     },
     {
@@ -728,7 +728,7 @@ const websiteData = {
         "en": "Chinese Journal of Aeronautics, 47(2), 200-215"
       },
       "pdfSize": "3.1 MB",
-      "pdfLink": "files/paper_ai_cfd.pdf",
+      "pdfLink": "files/paper_2025.pdf",
       "doi": ""
     }
   ],
