@@ -527,7 +527,7 @@ const websiteData = {
       },
       "pdfSize": "2.4 MB",
       "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": true
+      "doi": "10.1016/j.cma.2026.112345"
     },
     {
       "year": "2026",
@@ -545,7 +545,7 @@ const websiteData = {
       },
       "pdfSize": "3.12 MB",
       "pdfLink": "files/paper_2026_01.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2026",
@@ -563,7 +563,7 @@ const websiteData = {
       },
       "pdfSize": "2.45 MB",
       "pdfLink": "files/paper_2026_02.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2025",
@@ -581,7 +581,7 @@ const websiteData = {
       },
       "pdfSize": "4.18 MB",
       "pdfLink": "files/paper_2025_01.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2025",
@@ -599,7 +599,7 @@ const websiteData = {
       },
       "pdfSize": "2.89 MB",
       "pdfLink": "files/paper_2025_02.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2025",
@@ -617,7 +617,7 @@ const websiteData = {
       },
       "pdfSize": "5.22 MB",
       "pdfLink": "files/paper_2025_03.pdf",
-      "hasDoi": false
+      "doi": ""
     },
     {
       "year": "2024",
@@ -635,7 +635,7 @@ const websiteData = {
       },
       "pdfSize": "3.74 MB",
       "pdfLink": "files/paper_2024_01.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2024",
@@ -653,7 +653,7 @@ const websiteData = {
       },
       "pdfSize": "2.15 MB",
       "pdfLink": "files/paper_2024_02.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2024",
@@ -671,7 +671,7 @@ const websiteData = {
       },
       "pdfSize": "3.41 MB",
       "pdfLink": "files/paper_2024_03.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2023",
@@ -689,7 +689,7 @@ const websiteData = {
       },
       "pdfSize": "4.56 MB",
       "pdfLink": "files/paper_2023_01.pdf",
-      "hasDoi": false
+      "doi": ""
     },
     {
       "year": "2023",
@@ -707,7 +707,7 @@ const websiteData = {
       },
       "pdfSize": "3.08 MB",
       "pdfLink": "files/paper_2023_02.pdf",
-      "hasDoi": true
+      "doi": ""
     },
     {
       "year": "2026",
@@ -725,7 +725,7 @@ const websiteData = {
       },
       "pdfSize": "3.1 MB",
       "pdfLink": "files/paper_ai_cfd.pdf",
-      "hasDoi": true
+      "doi": ""
     }
   ],
 

@@ -367,13 +367,21 @@
                 </div>
             `).join('');
 
-            // 4. 渲染学术成果（引入 getText 安全读取）
+            // 4. 渲染学术成果 (首页专用：带数量截断 + 更多按钮 + DOI优化)
             const maxPubs = websiteData.config?.maxHomePubs || 10;
             const pubsList = websiteData.pubData || [];
-            const pubsToDisplay = pubsList.slice(0, maxPubs);
-            const hasMore = pubsList.length > maxPubs;
+            const pubsToDisplay = pubsList.slice(0, maxPubs); // 截取首页要显示的数量
+            const hasMore = pubsList.length > maxPubs;       // 判断是否需要“更多”按钮
 
-            let pubHTML = pubsToDisplay.map((pub, index) => `
+            // 第一步：先用 map 生成论文卡片的 HTML
+            let pubHTML = pubsToDisplay.map((pub, index) => {
+                // 清洗 DOI 字符串
+                const cleanDoi = pub.doi ? String(pub.doi).replace(/^(https?:\/\/)?doi\.org\//, '') : '';
+                const doiHtml = cleanDoi 
+                    ? `<a href="https://doi.org/${cleanDoi}" class="pub-link-btn doi-link" target="_blank" rel="noopener noreferrer">🔗 DOI</a>` 
+                    : '';
+
+                return `
                 <div class="pub-item fade-in-up" style="--i: ${index + 1}">
                     <div class="pub-year">${getText(pub.year, currentLang)}</div>
                     <div class="pub-content">
@@ -382,12 +390,13 @@
                         <p class="pub-journal">${getText(pub.journal, currentLang)}</p>
                         <div class="pub-links">
                             <a href="${pub.pdfLink || '#'}" class="pub-link-btn" target="_blank" rel="noopener noreferrer">📄 PDF (${getText(pub.pdfSize, currentLang)})</a>
-                            ${pub.hasDoi ? `<a href="#" class="pub-link-btn" target="_blank" rel="noopener noreferrer">🔗 DOI</a>` : ''}
+                            ${doiHtml}
                         </div>
                     </div>
-                </div>
-            `).join('');
+                </div>`;
+            }).join('');
 
+            // 第二步：关键点！如果还有更多，把按钮拼接到字符串末尾
             if (hasMore) {
                 pubHTML += `
                 <div class="pub-item fade-in-up" style="--i: ${pubsToDisplay.length + 1}; display: flex; align-items: center; justify-content: center; background-color: transparent; border: 2px dashed var(--border-color); cursor: pointer;" onclick="window.location.href='publications.html'">
@@ -397,6 +406,7 @@
                 </div>`;
             }
 
+            // 第三步：最后一次性写入容器
             document.getElementById('pub-container').innerHTML = pubHTML;
 
             initAnimations();
