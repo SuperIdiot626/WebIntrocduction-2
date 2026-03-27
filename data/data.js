@@ -35,6 +35,10 @@ const websiteData = {
     "allPubs": {
       "zh": "所有学术成果",
       "en": "All Publications"
+    },
+    "searchPlaceholder": { 
+      "zh": "输入关键词搜索论文 (标题、作者、年份...)", 
+      "en": "Search publications (Title, Authors, Year...)" 
     }
   },
   "hero": {
