@@ -530,148 +530,202 @@ const websiteData = {
       "hasDoi": true
     },
     {
-      "year": "2025",
+      "year": "2026",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "基于物理增强深度学习的跨声速流场快速预测方法",
+        "en": "Physics-Informed Deep Learning for Rapid Prediction of Transonic Flow Fields"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "张伟伟, 王博士, 赵同学, 等",
+        "en": "Zhang, W., Wang, L., Zhao, Q., et al."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《航空学报》, 47(2), 200-215",
+        "en": "Chinese Journal of Aeronautics, 47(2), 200-215"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": false
+      "pdfSize": "3.12 MB",
+      "pdfLink": "files/paper_2026_01.pdf",
+      "hasDoi": true
+    },
+    {
+      "year": "2026",
+      "title": {
+        "zh": "面向自动化飞行器设计的四阶段多模型协作框架",
+        "en": "A Four-Stage Multi-Model Collaborative Framework for Automated Aircraft Design"
+      },
+      "authors": {
+        "zh": "陈博士, 李工, 张同学",
+        "en": "Chen, W., Li, G., Zhang, X."
+      },
+      "journal": {
+        "zh": "IEEE软件工程汇刊, 52(4), 112-135",
+        "en": "IEEE Transactions on Software Engineering, 52(4), 112-135"
+      },
+      "pdfSize": "2.45 MB",
+      "pdfLink": "files/paper_2026_02.pdf",
+      "hasDoi": true
     },
     {
       "year": "2025",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "基于算子学习的非定常气动力非线性建模研究",
+        "en": "Nonlinear Modeling of Unsteady Aerodynamic Forces based on Neural Operators"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "王博士, 宋述芳, 等",
+        "en": "Wang, L., Song, S., et al."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《力学学报》, 57(8), 1580-1595",
+        "en": "Acta Mechanica Sinica, 57(8), 1580-1595"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": false
+      "pdfSize": "4.18 MB",
+      "pdfLink": "files/paper_2025_01.pdf",
+      "hasDoi": true
     },
     {
       "year": "2025",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "利用稀疏传感器布置进行复杂流场重构的压缩感知方法",
+        "en": "Compressive Sensing for Complex Flow Field Reconstruction using Sparse Sensor Placements"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "邬晓敬, 赵同学, 等",
+        "en": "Wu, X., Zhao, Q., et al."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《流体物理》, 37(10), 104105",
+        "en": "Physics of Fluids, 37(10), 104105"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": false
+      "pdfSize": "2.89 MB",
+      "pdfLink": "files/paper_2025_02.pdf",
+      "hasDoi": true
     },
     {
       "year": "2025",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "具有伽利略不变性的神经网络在壁面模拟大涡模拟中的应用",
+        "en": "Galilean-Invariant Neural Networks for Wall-Modeled Large Eddy Simulation"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "叶知秋, 吕振, 等",
+        "en": "Ye, Z., Lyu, Z., et al."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《计算物理学报》, 412, 110486",
+        "en": "Journal of Computational Physics, 412, 110486"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
+      "pdfSize": "5.22 MB",
+      "pdfLink": "files/paper_2025_03.pdf",
       "hasDoi": false
     },
     {
-      "year": "2025",
+      "year": "2024",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "连续变形机翼的气动弹性建模与分布式智能控制",
+        "en": "Aeroelastic Modeling and Distributed Intelligent Control of Continuous Morphing Wings"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "张伟伟, 谭胜涟, 王亦庄",
+        "en": "Zhang, W., Tan, S., Wang, Y."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《AIAA期刊》, 62(5), 1800-1815",
+        "en": "AIAA Journal, 62(5), 1800-1815"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
+      "pdfSize": "3.74 MB",
+      "pdfLink": "files/paper_2024_01.pdf",
+      "hasDoi": true
+    },
+    {
+      "year": "2024",
+      "title": {
+        "zh": "基于自适应强化学习的无人机阵风缓解系统设计",
+        "en": "Adaptive Reinforcement Learning-based Gust Alleviation System for Unmanned Aerial Vehicles"
+      },
+      "authors": {
+        "zh": "陈鑫, 邬晓敬, 等",
+        "en": "Chen, X., Wu, X., et al."
+      },
+      "journal": {
+        "zh": "《制导、控制与动力学杂志》, 47(12), 2900-2915",
+        "en": "Journal of Guidance, Control, and Dynamics, 47(12), 2900-2915"
+      },
+      "pdfSize": "2.15 MB",
+      "pdfLink": "files/paper_2024_02.pdf",
+      "hasDoi": true
+    },
+    {
+      "year": "2024",
+      "title": {
+        "zh": "跨声速抖振边界的实时智能识别与主动抑制策略",
+        "en": "Real-time Intelligent Identification and Active Suppression of Transonic Buffet Boundaries"
+      },
+      "authors": {
+        "zh": "左子俊, 张伟伟, 等",
+        "en": "Zuo, Z., Zhang, W., et al."
+      },
+      "journal": {
+        "zh": "《航空学报英文版》, 37(4), 150-168",
+        "en": "Chinese Journal of Aeronautics (English Edition), 37(4), 150-168"
+      },
+      "pdfSize": "3.41 MB",
+      "pdfLink": "files/paper_2024_03.pdf",
+      "hasDoi": true
+    },
+    {
+      "year": "2023",
+      "title": {
+        "zh": "结合生成对抗网络（GAN）的高维机翼形状气动反设计",
+        "en": "Aerodynamic Inverse Design of High-Dimensional Wing Shapes via Generative Adversarial Networks"
+      },
+      "authors": {
+        "zh": "王博士, 吴心怡, 等",
+        "en": "Wang, L., Wu, X., et al."
+      },
+      "journal": {
+        "zh": "《航空工程进展》, 14(2), 45-58",
+        "en": "Advances in Aeronautical Science and Engineering, 14(2), 45-58"
+      },
+      "pdfSize": "4.56 MB",
+      "pdfLink": "files/paper_2023_01.pdf",
       "hasDoi": false
     },
     {
-      "year": "2025",
+      "year": "2023",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "基于本征正交分解（POD）的非定常流场时空演化预测",
+        "en": "Spatiotemporal Evolution Prediction of Unsteady Flow Fields based on Proper Orthogonal Decomposition"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "李工, 於罗宁, 等",
+        "en": "Li, G., Yu, L., et al."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《空气动力学学报》, 41(3), 12-25",
+        "en": "Acta Aerodynamica Sinica, 41(3), 12-25"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": false
+      "pdfSize": "3.08 MB",
+      "pdfLink": "files/paper_2023_02.pdf",
+      "hasDoi": true
     },
     {
-      "year": "2025",
+      "year": "2026",
       "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
+        "zh": "基于物理增强深度学习的跨声速流场快速预测方法",
+        "en": "Physics-Informed Deep Learning for Rapid Prediction of Transonic Flow Fields"
       },
       "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
+        "zh": "张伟伟, 王博士, 等",
+        "en": "Zhang, W., Wang, L., et al."
       },
       "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
+        "zh": "《航空学报》, 47(2), 200-215",
+        "en": "Chinese Journal of Aeronautics, 47(2), 200-215"
       },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": false
-    },
-    {
-      "year": "2025",
-      "title": {
-        "zh": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes",
-        "en": "High-Concurrency Simulation and Validation Methodologies in LLM-driven Virtual Sandboxes"
-      },
-      "authors": {
-        "zh": "Liu, M., Chen, W., Zhang, H.",
-        "en": "Liu, M., Chen, W., Zhang, H."
-      },
-      "journal": {
-        "zh": "Proceedings of the ICSE '25",
-        "en": "Proceedings of the ICSE '25"
-      },
-      "pdfSize": "1.8 MB",
-      "pdfLink": "files/paper_2025.pdf",
-      "hasDoi": false
+      "pdfSize": "3.1 MB",
+      "pdfLink": "files/paper_ai_cfd.pdf",
+      "hasDoi": true
     }
   ],
 
